@@ -115,15 +115,15 @@
         }
 
         #home h1 {
-            /* Fluid typography: Shrinks automatically on smaller screens */
-            font-size: clamp(2.2rem, 6vw, 4rem); 
+            /* Changed minimum from 2.2rem to 1.6rem */
+            font-size: clamp(1.6rem, 8vw, 4rem); 
             font-weight: 800;
             margin-bottom: 10px;
             line-height: 1.2;
             background: linear-gradient(to right, var(--teal-light), var(--teal-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            word-wrap: break-word; /* Prevents long words from breaking the layout */
+            word-wrap: break-word; 
         }
 
         #home p.subtitle {
@@ -334,7 +334,6 @@
         /* ========================================= */
         
         @media (max-width: 768px) {
-            /* Mobile Navigation */
             nav {
                 padding: 15px 5%;
                 flex-direction: column;
@@ -346,12 +345,10 @@
                 justify-content: center;
             }
 
-            /* Adjust overall padding for smaller screens */
             section {
                 padding: 160px 5% 60px;
             }
 
-            /* Stack About section items */
             .about-content {
                 flex-direction: column;
                 gap: 30px;
@@ -366,9 +363,9 @@
         }
 
         @media (max-width: 480px) {
-            /* Extra tweaks for very small phones */
             #home h1 {
-                font-size: 2.2rem; /* Guarantees it fits */
+                /* Changed to 1.6rem to fix the cut-off text */
+                font-size: 1.6rem; 
             }
             #home p.subtitle {
                 font-size: 1rem;
@@ -394,7 +391,6 @@
         </ul>
     </nav>
 
-    <!-- HOME SECTION -->
     <section id="home">
         <h1>Ibibik Engineering Solutions</h1>
         <p class="subtitle">Precision Engineering Services • Modern Design • Flawless Execution</p>
@@ -423,36 +419,29 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
     <section id="portfolio">
         <h2>Featured Projects</h2>
         <div class="portfolio-grid">
-            
-            <!-- Project 1 -->
             <div class="project-card glass">
                 <h3>BLDC Remote Control Fan PCB</h3>
                 <p>Complete reverse engineering, circuit improvement, and manufacturing file generation for a closed-source consumer electronics controller.</p>
                 <a onclick="openPdf('Bldc_fan_portfolio.pdf')" class="btn">View Document</a>
             </div>
 
-            <!-- Project 2 -->
             <div class="project-card glass">
                 <h3>Embedded Boiler Controller</h3>
                 <p>An industrial control system designed from the ground up, utilizing ATmega328P with bare-metal C++ firmware for reliable state management.</p>
                 <a onclick="openPdf('upwork_portfolio.pdf')" class="btn">View Document</a>
             </div>
 
-            <!-- Project 3 -->
             <div class="project-card glass">
                 <h3>Ternary Industry Controller</h3>
                 <p>Fast-prototyping and replication of a high-end automation system for a leather tannery, enabling accurate spray process control.</p>
                 <a onclick="openPdf('ger_pcb_portfolio.pdf')" class="btn">View Document</a>
             </div>
-
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section id="about">
         <h2>About IES</h2>
         <div class="about-content">
@@ -489,7 +478,6 @@
         </div>
     </section>
 
-    <!-- PDF Viewer Modal -->
     <div id="pdf-modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closePdf()">&times;</span>
